@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'/>
+<b:include data='blog' name='all-head-content'/>
+<title><data:blog.pageTitle/></title>
+<link href='https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+<style>
+html,body{margin:0;padding:0;background:#070910;color:#e2e6f3;font-family:'Nunito',sans-serif;overflow-x:hidden;width:100%}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#070910;--surf:#0e1017;--card:#12141f;--bdr:rgba(255,255,255,.07);--red:#e8354a;--gold:#f5a623;--blue:#4a90d9;--txt:#e2e6f3;--mut:#5a6278;--r:10px}
+.navbar-iframe,#navbar-iframe,.status-msg-wrap{display:none!important}
+/* pages */
+.pg{display:none}.pg.on{display:block}
+/* topbar */
+#cptop{background:#0a0c14;border-bottom:1px solid var(--bdr);padding:5px 4%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px}
+.cptb{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.cptb span{color:#22c55e;font-weight:700;font-size:.65rem}
+#cpvis{color:var(--mut);font-size:.65rem}
+/* nav */
+#cpnav{position:sticky;top:0;z-index:600;background:rgba(7,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 4%;gap:.7rem;height:54px}
+.cplogo{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:3px;color:#fff;cursor:pointer;flex-shrink:0}
+.cplogo em{color:var(--red);font-style:normal}
+.cptabs{display:flex;gap:.1rem;flex:1;overflow-x:auto;scrollbar-width:none}
+.cptabs::-webkit-scrollbar{display:none}
+.cptab{background:none;border:none;color:var(--mut);font-family:'Nunito',sans-serif;font-size:.76rem;font-weight:700;padding:5px 9px;border-radius:6px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.cptab:hover,.cptab.on{background:rgba(255,255,255,.06);color:var(--txt)}
+.cptab.on{color:var(--red)}
+.cpswrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid var(--bdr);border-radius:7px;padding:5px 10px;flex-shrink:0}
+.cpswrap input{background:none;border:none;outline:none;color:var(--txt);font-family:'Nunito',sans-serif;font-size:.76rem;width:100px}
+.cpswrap input::placeholder{color:var(--mut)}
+/* mobile bottom nav */
+#cpmob{display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;background:rgba(10,12,20,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--bdr);justify-content:space-around;align-items:center;padding:6px 0 8px}
+.mbt{background:none;border:none;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:2px;font-family:'Nunito',sans-serif;font-size:.57rem;font-weight:700;cursor:pointer;padding:3px 8px}
+.mbt .mi{font-size:1.1rem}
+.mbt.on{color:var(--red)}
+/* hero */
+#cphe{position:relative;min-height:460px;display:flex;align-items:flex-end;padding:0 4% 2.5rem;overflow:hidden}
+.hemesh{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 60% at 65% 30%,rgba(232,53,74,.13) 0%,transparent 65%),linear-gradient(175deg,#0e1017,#070910)}
+.helines{position:absolute;inset:0;z-index:1;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 70px),repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 70px)}
+#hebd{position:absolute;inset:0;z-index:2;background-size:cover;background-position:center top;opacity:0;transition:opacity .9s}
+.heov{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,#070910 0%,rgba(7,9,16,.72) 50%,rgba(7,9,16,.3) 100%)}
+.hein{position:relative;z-index:4;max-width:560px}
+.heeye{display:inline-flex;align-items:center;gap:7px;background:rgba(232,53,74,.1);border:1px solid rgba(232,53,74,.28);color:var(--red);font-size:.64rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;border-radius:40px;margin-bottom:.9rem}
+.hdot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.heh1{font-family:'Rajdhani',sans-serif;font-size:clamp(1.9rem,6vw,4rem);font-weight:700;line-height:.93;letter-spacing:-1px;margin-bottom:.8rem}
+.heghost{-webkit-text-stroke:1px rgba(255,255,255,.22);color:transparent}
+.hedesc{color:var(--mut);font-size:.84rem;line-height:1.6;margin-bottom:1.1rem;max-width:440px}
+.herow{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.2rem}
+.hesc{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--gold);font-size:.75rem;font-weight:700;padding:3px 9px;border-radius:4px}
+.xpill{background:rgba(255,255,255,.06);border:1px solid var(--bdr);color:var(--mut);font-size:.68rem;padding:3px 8px;border-radius:4px}
+.hebtns{display:flex;gap:.55rem;flex-wrap:wrap}
+/* buttons */
+.bw{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;border:none;padding:11px 18px;border-radius:7px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .15s}
+.bw:active{transform:scale(.97)}
+.bi{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--txt);padding:11px 14px;border-radius:7px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700}
+.bwl{display:inline-flex;align-items:center;gap:5px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#22c55e;padding:10px 12px;border-radius:7px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700}
+.bwl.sv{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.4)}
+.btr{display:inline-flex;align-items:center;gap:5px;background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);color:var(--blue);padding:10px 11px;border-radius:7px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700}
+.bsh{display:inline-flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--mut);padding:10px 11px;border-radius:7px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:600}
+.bsa{background:none;border:1px solid var(--bdr);color:var(--mut);font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
+.bsa:hover,.bsa:focus{border-color:var(--red);color:var(--red)}
+.xfb{background:rgba(255,255,255,.05);border:1px solid var(--bdr);color:var(--mut);font-family:'Nunito',sans-serif;font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
+.xfb.on{background:var(--red);border-color:var(--red);color:#fff}
+/* stats */
+#cpstat{background:var(--surf);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);display:flex;overflow-x:auto;scrollbar-width:none}
+#cpstat::-webkit-scrollbar{display:none}
+.xst{flex:1;min-width:88px;padding:10px 8px;text-align:center;border-right:1px solid var(--bdr)}
+.xst:last-child{border-right:none}
+.xsn{font-family:'Rajdhani',sans-serif;font-size:1.15rem;font-weight:700;color:#fff}
+.xsl{font-size:.57rem;color:var(--mut);letter-spacing:1px;text-transform:uppercase}
+/* trust */
+#cptrust{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;padding:9px 4%;background:#0b0d16;border-bottom:1px solid var(--bdr)}
+.xti{font-size:.66rem;font-weight:600;color:var(--mut)}
+/* ticker */
+#cptick{background:var(--red);padding:6px 0;overflow:hidden}
+.xtk{display:flex;gap:3rem;white-space:nowrap;animation:tkscrl 28s linear infinite}
+@keyframes tkscrl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.xti2{font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+/* section */
+.xsec{padding:1.5rem 4%}
+.xsh{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.xstt{font-family:'Rajdhani',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:2px;display:flex;align-items:center;gap:7px}
+.xbar{width:4px;height:15px;border-radius:2px;flex-shrink:0}
+/* grid */
+.xg5{display:grid;gap:.65rem}
+.xg3{display:grid;gap:.65rem}
+/* card */
+.xcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;cursor:pointer;animation:cfup .38s ease both}
+@keyframes cfup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.xct{aspect-ratio:2/3;position:relative;overflow:hidden;background:#0c0e18}
+/* POSTER: pure CSS bg-image set via JS data-attr — zero CORS issues */
+.xct-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;transition:transform .3s,opacity .45s;opacity:0}
+.xct-bg.show{opacity:1}
+.xcard:active .xct-bg,.xcard:hover .xct-bg{transform:scale(1.05)}
+.xct-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:2.5rem;font-weight:700;color:rgba(255,255,255,.08);transition:opacity .3s}
+.xct-bg.show ~ .xct-fb{opacity:0}
+.xveil{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,9,16,.92) 0%,transparent 50%);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+.xcard:hover .xveil,.xcard:active .xveil{opacity:1}
+.xplay{width:40px;height:40px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(232,53,74,.7)}
+.xbdg{position:absolute;top:6px;left:6px;font-size:.57rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:3px;color:#fff}
+.bn{background:var(--red)}.bh{background:#166534}.bs{background:var(--blue)}.bt{background:var(--gold);color:#000}.bim{background:#6d28d9}
+.xrk{position:absolute;bottom:38px;right:5px;font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;color:rgba(255,255,255,.06);line-height:1}
+.xcb{padding:7px 9px 10px}
+.xcn{font-weight:700;font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
+.xcm{display:flex;gap:5px;font-size:.68rem;color:var(--mut)}
+.xcsc{color:var(--gold);font-weight:700}
+.xcbtns{display:flex;gap:.28rem;margin-top:5px;flex-wrap:wrap}
+/* card mini buttons — use data-action, no inline onclick */
+.cbw{background:var(--red);color:#fff;border:none;padding:5px 8px;border-radius:5px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.cbwl{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#22c55e;padding:5px 7px;border-radius:5px;cursor:pointer;font-size:.63rem;font-weight:700}
+.cbwl.sv{background:rgba(34,197,94,.18)}
+.cbtr{background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.2);color:var(--blue);padding:5px 7px;border-radius:5px;cursor:pointer;font-size:.63rem;font-weight:700}
+/* featured */
+.xfc{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;cursor:pointer}
+.xft{height:170px;position:relative;overflow:hidden;background:#0c0e18;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:3.5rem;font-weight:700;color:rgba(255,255,255,.07)}
+.xft-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity .45s,transform .3s}
+.xft-bg.show{opacity:1}
+.xfc:hover .xft-bg,.xfc:active .xft-bg{transform:scale(1.04)}
+.xft-ov{position:absolute;inset:0;background:linear-gradient(to top,var(--card) 0%,rgba(0,0,0,.12) 100%);z-index:2;pointer-events:none}
+.xft-tx{position:relative;z-index:1;transition:opacity .3s}
+.xft-bg.show ~ .xft-tx{opacity:0}
+.xfbd{padding:10px 12px 13px}
+.xftt{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:3px}
+.xfd{font-size:.72rem;color:var(--mut);line-height:1.5;margin-bottom:8px}
+.xfbtns{display:flex;gap:.38rem;flex-wrap:wrap}
+/* genre top */
+.xgt{padding:1.6rem 4% .9rem}
+.xgh{font-family:'Rajdhani',sans-serif;font-size:clamp(1.4rem,5vw,2.5rem);font-weight:700;margin-bottom:.25rem}
+.xgs{color:var(--mut);font-size:.82rem}
+.xfrow{display:flex;gap:.38rem;flex-wrap:wrap;margin:.85rem 0}
+/* search */
+.xspg{padding:1.6rem 4%}
+.xsb{display:flex;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:11px 14px;margin-bottom:1.2rem}
+.xsb input{flex:1;background:none;border:none;outline:none;color:var(--txt);font-family:'Nunito',sans-serif;font-size:.92rem}
+.xsb input::placeholder{color:var(--mut)}
+.xslbl{font-size:.68rem;color:var(--mut);letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem}
+/* watchlist */
+.xwlpg{padding:1.6rem 4%}
+.xwlh{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:.25rem}
+.xwls{color:var(--mut);font-size:.8rem;margin-bottom:1.1rem}
+.xwle{text-align:center;padding:2.2rem;color:var(--mut);font-size:.82rem;border:1px dashed var(--bdr);border-radius:var(--r)}
+/* detail */
+#xdeth{position:relative;min-height:380px;display:flex;align-items:flex-end;padding:0 4% 2rem;overflow:hidden}
+.xdbg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center top;background-repeat:no-repeat}
+.xdbg-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,#070910 0%,rgba(7,9,16,.65) 55%,rgba(7,9,16,.28) 100%)}
+.xdin{position:relative;z-index:3;max-width:600px}
+.xdposter{position:absolute;right:4%;bottom:0;z-index:4;height:250px;aspect-ratio:2/3;border-radius:8px;background-size:cover;background-position:center;box-shadow:0 14px 44px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.1);display:none}
+.xdtt{font-family:'Rajdhani',sans-serif;font-size:clamp(1.55rem,4.5vw,3rem);font-weight:700;line-height:.93;margin-bottom:.8rem}
+.xddes{color:var(--mut);font-size:.83rem;line-height:1.63;margin-bottom:.95rem;max-width:480px}
+.xdtags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:1rem}
+.xdtag{background:rgba(255,255,255,.06);border:1px solid var(--bdr);font-size:.68rem;padding:3px 8px;border-radius:20px;color:var(--mut)}
+.xdact{display:flex;gap:.5rem;flex-wrap:wrap}
+.xcast{padding:1.1rem 4%}
+.xclbl{font-family:'Rajdhani',sans-serif;font-size:.88rem;letter-spacing:2px;margin-bottom:.7rem}
+.xcrw{display:flex;gap:.55rem;flex-wrap:wrap}
+.xcav{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;color:rgba(255,255,255,.45)}
+.xcnm{font-size:.62rem;color:var(--mut);margin-top:3px;text-align:center;width:54px}
+/* locker */
+#xlkbg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:7000;align-items:center;justify-content:center}
+#xlkbg.on{display:flex}
+.xlk{background:var(--card);border:1px solid rgba(232,53,74,.18);border-radius:16px;padding:1.9rem 1.5rem;max-width:390px;width:90%;text-align:center;position:relative;animation:lkpop .3s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes lkpop{from{transform:scale(.84);opacity:0}to{transform:scale(1);opacity:1}}
+.xlkx{position:absolute;top:11px;right:13px;background:none;border:none;color:var(--mut);font-size:1.1rem;cursor:pointer}
+.xlki{width:58px;height:58px;background:linear-gradient(135deg,var(--red),#b91c2c);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;font-size:1.5rem}
+.xlkh{font-family:'Rajdhani',sans-serif;font-size:1.4rem;letter-spacing:2px;margin-bottom:.28rem}
+.xlkm{color:var(--red);font-weight:700;font-size:.87rem;margin-bottom:.55rem}
+.xlkp{color:var(--mut);font-size:.78rem;line-height:1.58;margin-bottom:.85rem}
+.xlks{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;padding:.7rem .9rem;margin-bottom:.9rem;text-align:left}
+.xlst{display:flex;align-items:center;gap:7px;font-size:.75rem;padding:3px 0;color:var(--txt)}
+.xlsn{width:18px;height:18px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;flex-shrink:0}
+.bunlk{width:100%;background:linear-gradient(135deg,var(--red),#b91c2c);color:#fff;border:none;padding:12px;font-family:'Rajdhani',sans-serif;font-size:.98rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:8px;cursor:pointer}
+.bunlk:active{transform:scale(.98)}
+.xlkn{margin-top:.48rem;font-size:.62rem;color:var(--mut)}
+/* toast */
+#xtoast{position:fixed;bottom:68px;left:50%;transform:translateX(-50%) translateY(60px);background:#1a1d2e;border:1px solid rgba(34,197,94,.3);color:#22c55e;padding:8px 15px;border-radius:8px;font-size:.77rem;font-weight:700;z-index:8000;transition:transform .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none;font-family:'Nunito',sans-serif;white-space:nowrap}
+#xtoast.on{transform:translateX(-50%) translateY(0)}
+/* footer */
+#xfoot{border-top:1px solid var(--bdr);padding:1.5rem 4%;margin-top:2rem;margin-bottom:62px}
+.xfr{display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
+.xfl{font-family:'Rajdhani',sans-serif;font-size:1.25rem;letter-spacing:3px;margin-bottom:.3rem}
+.xfl em{color:var(--red);font-style:normal}
+.xftg{font-size:.68rem;color:var(--mut)}
+.xflinks{display:flex;gap:.9rem;flex-wrap:wrap}
+.xflinks a{color:var(--mut);font-size:.72rem;text-decoration:none;cursor:pointer}
+.xfcp{color:var(--mut);font-size:.64rem;margin-top:1rem;line-height:1.65}
+
+/* ══ RESPONSIVE ══ */
+/* mobile first — default = 2 cols */
+.xg5{grid-template-columns:repeat(2,1fr)}
+.xg3{grid-template-columns:1fr}
+#cpnav .cptabs,.cpswrap{display:none}
+#cpmob{display:flex}
+#cphe{min-height:380px;padding:0 4% 1.7rem}
+.xdposter{display:none!important}
+/* ≥500px = 3 cols */
+@media(min-width:500px){
+  .xg5{grid-template-columns:repeat(3,1fr)}
+  .xg3{grid-template-columns:repeat(2,1fr)}
+}
+/* ≥700px tablet = show desktop nav */
+@media(min-width:700px){
+  #cpnav .cptabs,.cpswrap{display:flex}
+  #cpmob{display:none}
+  .xg5{grid-template-columns:repeat(4,1fr)}
+  .xg3{grid-template-columns:repeat(3,1fr)}
+  #cphe{min-height:440px;padding:0 5% 2.4rem}
+  #xdeth{min-height:360px}
+}
+/* ≥960px desktop */
+@media(min-width:960px){
+  .xg5{grid-template-columns:repeat(5,1fr)}
+  #xdeth{min-height:410px}
+  .xdposter{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='false'>
+<b:includable id='main'/>
+</b:widget>
+</b:section>
+
+<!-- TOPBAR -->
+<div id='cptop'>
+  <div class='cptb'>
+    <span>✓ SSL</span><span>✓ No Malware</span><span>✓ Free HD</span><span>✓ Daily</span>
+  </div>
+  <div id='cpvis'></div>
+</div>
+
+<!-- NAV -->
+<nav id='cpnav'>
+  <span class='cplogo' data-go='home'>CINE<em>PULSE</em></span>
+  <div class='cptabs'>
+    <button class='cptab on' data-go='home'   id='xt-home'>Home</button>
+    <button class='cptab'    data-go='movies' id='xt-movies'>Movies</button>
+    <button class='cptab'    data-go='series' id='xt-series'>Series</button>
+    <button class='cptab'    data-go='action' id='xt-action'>Action</button>
+    <button class='cptab'    data-go='scifi'  id='xt-scifi'>Sci-Fi</button>
+    <button class='cptab'    data-go='drama'  id='xt-drama'>Drama</button>
+    <button class='cptab'    data-go='wl'     id='xt-wl'>♥ Saved</button>
+  </div>
+  <div class='cpswrap'>
+    <svg fill='none' height='12' stroke='#5a6278' stroke-width='2' viewBox='0 0 24 24' width='12'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>
+    <input id='cpnq' placeholder='Search...' type='text'/>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id='cpmob'>
+  <button class='mbt on' data-go='home'   id='xm-home'><span class='mi'>🏠</span>Home</button>
+  <button class='mbt'    data-go='movies' id='xm-movies'><span class='mi'>🎬</span>Movies</button>
+  <button class='mbt'    data-go='series' id='xm-series'><span class='mi'>📺</span>Series</button>
+  <button class='mbt'    data-go='search'><span class='mi'>🔍</span>Search</button>
+  <button class='mbt'    data-go='wl'     id='xm-wl'><span class='mi'>♥</span>Saved</button>
+</div>
+
+<!-- HOME -->
+<div class='pg on' id='xpg-home'>
+  <div id='cphe'>
+    <div class='hemesh'></div><div class='helines'></div>
+    <div id='hebd'></div>
+    <div class='heov'></div>
+    <div class='hein'>
+      <div class='heeye'><span class='hdot'></span>Featured Tonight</div>
+      <h1 class='heh1' id='hett'>Loading...</h1>
+      <p class='hedesc' id='heds'></p>
+      <div class='herow'>
+        <div class='hesc' id='hesc'>★ —</div>
+        <span class='xpill' id='hegen'>—</span>
+        <span class='xpill'>HD</span>
+      </div>
+      <div class='hebtns'>
+        <button class='bw'  data-action='watch' data-idx='0'>&#9654; Watch Free</button>
+        <button class='bi'  data-action='info'  data-idx='0'>ⓘ Info</button>
+        <button class='bwl' data-action='save'  data-idx='0' id='hewl'>♥ Save</button>
+        <button class='btr' data-action='trail' data-idx='0'>&#9655; Trailer</button>
+      </div>
+    </div>
+  </div>
+
+  <div id='cpstat'>
+    <div class='xst'><div class='xsn'>50K+</div><div class='xsl'>Titles</div></div>
+    <div class='xst'><div class='xsn'>4K HD</div><div class='xsl'>Quality</div></div>
+    <div class='xst'><div class='xsn'>Daily</div><div class='xsl'>Updated</div></div>
+    <div class='xst'><div class='xsn'>Free</div><div class='xsl'>Forever</div></div>
+    <div class='xst'><div class='xsn'>9.1★</div><div class='xsl'>Rating</div></div>
+  </div>
+
+  <div id='cptrust'>
+    <span class='xti'>🔒 SSL Encrypted</span>
+    <span class='xti'>🛡️ Virus Free</span>
+    <span class='xti'>🚫 No Registration</span>
+    <span class='xti'>⚡ Instant HD</span>
+    <span class='xti'>✅ DMCA Safe</span>
+  </div>
+
+  <div id='cptick'><div class='xtk'>
+    <span class='xti2'>🔥 Trending &nbsp;★ Updated Daily &nbsp;🎬 4K HDR &nbsp;⚡ No Signup &nbsp;🍿 New Weekly &nbsp;🔒 100% Safe</span>
+    <span class='xti2'>&nbsp;&nbsp;&nbsp;🔥 Trending &nbsp;★ Updated Daily &nbsp;🎬 4K HDR &nbsp;⚡ No Signup &nbsp;🍿 New Weekly &nbsp;🔒 100% Safe</span>
+  </div></div>
+
+  <div class='xsec'>
+    <div class='xsh'><h2 class='xstt'><div class='xbar' style='background:var(--red)'></div>🔥 Trending Now</h2><button class='bsa' data-go='movies'>View All →</button></div>
+    <div class='xg5' id='xtrend'></div>
+  </div>
+  <div class='xsec' style='padding-top:0'>
+    <div class='xsh'><h2 class='xstt'><div class='xbar' style='background:var(--blue)'></div>📺 Hot Series</h2><button class='bsa' data-go='series'>View All →</button></div>
+    <div class='xg5' id='xserhome'></div>
+  </div>
+  <div class='xsec' style='padding-top:0'>
+    <div class='xsh'><h2 class='xstt'><div class='xbar' style='background:var(--gold)'></div>⭐ Editor&#39;s Picks</h2></div>
+    <div class='xg3' id='xpicks'></div>
+  </div>
+  <div class='xsec' style='padding-top:0'>
+    <div class='xsh'><h2 class='xstt'><div class='xbar' style='background:#22c55e'></div>🆕 New Arrivals</h2><button class='bsa' data-go='movies'>View All →</button></div>
+    <div class='xg5' id='xnew'></div>
+  </div>
+</div>
+
+<!-- MOVIES -->
+<div class='pg' id='xpg-movies'>
+  <div class='xgt'><div class='xgh'>Movies</div><div class='xgs'>Full collection — all genres</div>
+    <div class='xfrow' id='frow-movies'>
+      <button class='xfb on' data-filter='all' data-pg='movies'>All</button>
+      <button class='xfb' data-filter='top' data-pg='movies'>Top Rated</button>
+      <button class='xfb' data-filter='2024' data-pg='movies'>2024</button>
+      <button class='xfb' data-filter='2023' data-pg='movies'>2023</button>
+      <button class='xfb' data-filter='Action' data-pg='movies'>Action</button>
+      <button class='xfb' data-filter='Sci-Fi' data-pg='movies'>Sci-Fi</button>
+      <button class='xfb' data-filter='Drama' data-pg='movies'>Drama</button>
+    </div>
+  </div>
+  <div class='xsec' style='padding-top:0'><div class='xg5' id='xmovg'></div></div>
+</div>
+
+<!-- SERIES -->
+<div class='pg' id='xpg-series'>
+  <div class='xgt'><div class='xgh'>Series</div><div class='xgs'>Binge-worthy shows, all free</div>
+    <div class='xfrow' id='frow-series'>
+      <button class='xfb on' data-filter='all' data-pg='series'>All</button>
+      <button class='xfb' data-filter='top' data-pg='series'>Top Rated</button>
+      <button class='xfb' data-filter='Drama' data-pg='series'>Drama</button>
+      <button class='xfb' data-filter='Thriller' data-pg='series'>Thriller</button>
+      <button class='xfb' data-filter='Fantasy' data-pg='series'>Fantasy</button>
+    </div>
+  </div>
+  <div class='xsec' style='padding-top:0'><div class='xg5' id='xserg'></div></div>
+</div>
+
+<!-- ACTION -->
+<div class='pg' id='xpg-action'>
+  <div class='xgt'><div class='xgh'>Action</div><div class='xgs'>Explosions, chases, heroes</div>
+    <div class='xfrow' id='frow-action'>
+      <button class='xfb on' data-filter='all' data-pg='action'>All</button>
+      <button class='xfb' data-filter='top' data-pg='action'>Top Rated</button>
+    </div>
+  </div>
+  <div class='xsec' style='padding-top:0'><div class='xg5' id='xactg'></div></div>
+</div>
+
+<!-- SCIFI -->
+<div class='pg' id='xpg-scifi'>
+  <div class='xgt'><div class='xgh'>Sci-Fi</div><div class='xgs'>The future of cinema, today</div>
+    <div class='xfrow' id='frow-scifi'>
+      <button class='xfb on' data-filter='all' data-pg='scifi'>All</button>
+      <button class='xfb' data-filter='top' data-pg='scifi'>Top Rated</button>
+    </div>
+  </div>
+  <div class='xsec' style='padding-top:0'><div class='xg5' id='xscig'></div></div>
+</div>
+
+<!-- DRAMA -->
+<div class='pg' id='xpg-drama'>
+  <div class='xgt'><div class='xgh'>Drama</div><div class='xgs'>Stories that stay with you</div>
+    <div class='xfrow' id='frow-drama'>
+      <button class='xfb on' data-filter='all' data-pg='drama'>All</button>
+      <button class='xfb' data-filter='top' data-pg='drama'>Top Rated</button>
+    </div>
+  </div>
+  <div class='xsec' style='padding-top:0'><div class='xg5' id='xdrag'></div></div>
+</div>
+
+<!-- WATCHLIST -->
+<div class='pg' id='xpg-wl'>
+  <div class='xwlpg'>
+    <div class='xwlh'>♥ My Watchlist</div>
+    <div class='xwls'>Your saved titles — tap to watch</div>
+    <div class='xg5' id='xwlg'></div>
+    <div class='xwle' id='xwle' style='display:none'>Nothing saved yet. Browse and tap ♥ to add titles.</div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class='pg' id='xpg-search'>
+  <div class='xspg'>
+    <div class='xsb'>
+      <svg fill='none' height='16' stroke='#5a6278' stroke-width='2' viewBox='0 0 24 24' width='16'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.35-4.35'/></svg>
+      <input id='xsi' placeholder='Search movies, series, genres...' type='text'/>
+    </div>
+    <div class='xslbl' id='xslbl'>Type to discover titles...</div>
+    <div class='xg5' id='xsg'></div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div class='pg' id='xpg-detail'>
+  <div id='xdeth'>
+    <div class='xdbg' id='xdbg'><div class='xdbg-ov'></div></div>
+    <div class='xdin' id='xdin'></div>
+    <div class='xdposter' id='xdposter'></div>
+  </div>
+  <div class='xcast' id='xdcast'></div>
+  <div class='xsec'>
+    <div class='xsh'><h2 class='xstt'><div class='xbar' style='background:var(--red)'></div>More Like This</h2></div>
+    <div class='xg5' id='xdmore'></div>
+  </div>
+</div>
+
+<!-- LOCKER -->
+<div id='xlkbg'>
+  <div class='xlk'>
+    <button class='xlkx' id='xlkclose'>✕</button>
+    <div class='xlki'>&#9654;</div>
+    <h2 class='xlkh'>UNLOCK STREAM</h2>
+    <div class='xlkm' id='xlkname'>—</div>
+    <p class='xlkp'>Complete one quick step to unlock <strong>free HD streaming</strong>. No account needed.</p>
+    <div class='xlks'>
+      <div class='xlst'><div class='xlsn'>1</div><span>Tap the button below</span></div>
+      <div class='xlst'><div class='xlsn'>2</div><span>Complete 30-sec verification</span></div>
+      <div class='xlst'><div class='xlsn'>3</div><span>HD stream unlocks instantly 🎬</span></div>
+    </div>
+    <button class='bunlk' id='xcpabtn'>🔓 Unlock Free Stream</button>
+    <p class='xlkn'>Free forever · No signup · Works worldwide</p>
+  </div>
+</div>
+
+<div id='xtoast'></div>
+
+<div id='xfoot'>
+  <div class='xfr'>
+    <div><div class='xfl'>CINE<em>PULSE</em></div><div class='xftg'>The pulse of cinema. Free, always.</div></div>
+    <div class='xflinks'>
+      <a data-go='movies'>Movies</a>
+      <a data-go='series'>Series</a>
+      <a data-go='action'>Action</a>
+      <a data-go='wl'>Watchlist</a>
+      <a>DMCA</a><a>Privacy</a><a>Terms</a>
+    </div>
+  </div>
+  <div class='xfcp'>© 2025 CinePulse — For entertainment discovery only. All trademarks belong to their owners. CinePulse does not host any video files.</div>
+</div>
+
+<script>
+//<![CDATA[
+(function(){
+'use strict';
+
+/* ══ CONFIG — CHANGE THIS ══ */
+var CPA = 'https://YOUR-CPA-LOCKER-LINK-HERE.com';
+
+/* ══ TMDB ══ */
+var IM  = 'https://image.tmdb.org/t/p/w500';
+var IMB = 'https://image.tmdb.org/t/p/w1280';
+
+/* ══ DB ══ */
+var XDB = [
+  {id:1, t:"Dune: Part Two",                     y:"2024", s:8.5, g:"Sci-Fi",    tp:"Movie",  b:"IMAX",   p:"/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg", bd:"/xOMo8BRK7PfcJv9JCnx7s5hj0ox.jpg", c:"#0c0e28,#1a0a14", d:"Paul Atreides unites with the Fremen on a warpath of revenge against the conspirators who destroyed his family.", ca:["T. Chalamet","Z. Depp","F. Ferguson"]},
+  {id:2, t:"The Batman",                          y:"2022", s:7.8, g:"Action",    tp:"Movie",  b:"HD",     p:"/74xTEgt7R36Fpooo50r9T25onhq.jpg",  bd:"/5P8SmMzik7q9sMH7aN3L76bDrDm.jpg",  c:"#070710,#0d0d1e", d:"A sadistic serial killer murders key political figures in Gotham, forcing Batman to investigate the city's hidden corruption.", ca:["R. Pattinson","Z. Kravitz","P. Dano"]},
+  {id:3, t:"Inside Out 2",                        y:"2024", s:7.6, g:"Animation", tp:"Movie",  b:"HD",     p:"/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",  bd:"/4YZgsHLBBceUtXkJ55MuBWhT5ia.jpg",  c:"#0a1628,#1a0a2e", d:"Follow Riley in her teenage years as a new emotion — Anxiety — joins her existing emotions.", ca:["A. Poehler","M. Smith","K. Minogue"]},
+  {id:4, t:"Mission Impossible Dead Reckoning",   y:"2023", s:7.7, g:"Action",    tp:"Movie",  b:"HD",     p:"/NNxYkU70HPurnNCSiCjYAmacwm.jpg",   bd:"/1CCB1OcIVOtDxMBOy5odiCqFhCl.jpg",  c:"#0d1b0a,#0a1400", d:"Ethan Hunt and his IMF team must track down a terrifying new weapon that threatens all of humanity.", ca:["T. Cruise","H. Atwell","S. Pegg"]},
+  {id:5, t:"Avatar The Way of Water",             y:"2022", s:7.6, g:"Sci-Fi",    tp:"Movie",  b:"IMAX",   p:"/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",  bd:"/s16H6tpK2utvwpaezv13APeeqMd.jpg",  c:"#0a1a1a,#001a10", d:"Jake Sully and Neytiri must leave their home and explore the regions of Pandora to protect their family.", ca:["S. Worthington","Z. Saldana","S. Lang"]},
+  {id:6, t:"Gladiator II",                        y:"2024", s:6.5, g:"Action",    tp:"Movie",  b:"HD",     p:"/2cxhvwyE0RYfnm7tCI4BPwWDFIf.jpg",  bd:"/euYIwmwkmz95mnXvufEJIE6nCh7.jpg",  c:"#1a0a00,#120800", d:"Lucius is forced into the Colosseum and must look to his past to return glory to Rome.", ca:["P. Mescal","D. Washington","P. Pascal"]},
+  {id:7, t:"The Last of Us",                      y:"2023", s:8.8, g:"Drama",     tp:"Series", b:"SERIES", p:"/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",  bd:"/9PqD3wSIjntyJDBzMNuxuKHuMPa.jpg",  c:"#1a0a0a,#120808", d:"Joel smuggles Ellie out of a quarantine zone in this brutal, heartbreaking post-apocalyptic journey.", ca:["P. Pascal","B. Ramsey","G. Johnson"]},
+  {id:8, t:"House of the Dragon",                 y:"2022", s:8.5, g:"Fantasy",   tp:"Series", b:"SERIES", p:"/z2yahl2uefxDCl0nogcRBstwruJ.jpg",  bd:"/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",  c:"#1a0d00,#130900", d:"The story of House Targaryen set 200 years before Game of Thrones.", ca:["E. D'Arcy","M. Alcock","O. Cooke"]},
+  {id:9, t:"Squid Game",                          y:"2021", s:8.0, g:"Thriller",  tp:"Series", b:"SERIES", p:"/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",  bd:"/qw3J9cNeLioOLoR68WX7z79aCdK.jpg",  c:"#00121a,#000d12", d:"Cash-strapped players accept a strange invitation to compete in children's games with deadly stakes.", ca:["L. Jung-jae","L. Byung-hun","Y. Ji-hye"]},
+  {id:10,t:"Wednesday",                           y:"2022", s:8.1, g:"Horror",    tp:"Series", b:"SERIES", p:"/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",  bd:"/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",  c:"#0d000d,#080008", d:"Wednesday Addams masters her psychic ability while thwarting a monster killing spree.", ca:["J. Ortega","E. Ricci","C. Laurie"]},
+  {id:11,t:"Severance",                           y:"2022", s:8.7, g:"Sci-Fi",    tp:"Series", b:"SERIES", p:"/lHb0Lym0BjgXhRBRodRYP9fcE2h.jpg",  bd:"/bPBaHFhYKHaVBZBY9BPTCQHQWyN.jpg",  c:"#0a0f1a,#070b14", d:"Mark leads a team whose memories are surgically divided between work and personal life.", ca:["A. Scott","B. Turturro","P. Arquette"]},
+  {id:12,t:"The Bear",                            y:"2022", s:8.6, g:"Drama",     tp:"Series", b:"SERIES", p:"/qGf3b0BFR8Uy6MXnPNkJy7UMtyM.jpg",  bd:"/4JQTO2k4Zm0RDkKfpWYLT0iEUh8.jpg",  c:"#0f0a00,#100b00", d:"A young chef returns to Chicago to run his family sandwich shop, grappling with grief and ambition.", ca:["J. Allen","A. Taylor-Joy","O. Coleman"]},
+  {id:13,t:"Oppenheimer",                         y:"2023", s:8.3, g:"Drama",     tp:"Movie",  b:"HD",     p:"/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",  bd:"/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",  c:"#1a0a00,#0d0500", d:"The story of J. Robert Oppenheimer and his role in developing the atomic bomb.", ca:["C. Murphy","E. Blunt","R. Downey Jr."]},
+  {id:14,t:"Poor Things",                         y:"2023", s:7.8, g:"Drama",     tp:"Movie",  b:"HD",     p:"/kCGlIMHnOm8JPXEleHCLh1NTVG0.jpg",  bd:"/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg",  c:"#0f0028,#0a001a", d:"Bella Baxter, brought back to life by an unorthodox scientist, embarks on a wild Victorian odyssey.", ca:["E. Stone","W. Dafoe","M. Ruffalo"]},
+  {id:15,t:"Fast X",                              y:"2023", s:5.9, g:"Action",    tp:"Movie",  b:"HD",     p:"/fiVW06jE7z9F3NZTSt8q4eCHjeX.jpg",  bd:"/rqbCbjoh9A74Z4htRBnrGdmzMR6.jpg",  c:"#1a0f0a,#120a06", d:"Dom Toretto and his family are targeted by the vengeful son of drug kingpin Hernan Reyes.", ca:["V. Diesel","M. Rodriguez","J. Momoa"]},
+];
+
+/* ══ HELPERS ══ */
+function ini(t){return t.split(' ').map(function(w){return w[0]}).join('').slice(0,2).toUpperCase()}
+function bcls(b){return b==='SERIES'?'bs':b==='IMAX'?'bim':b==='NEW'?'bn':'bh'}
+
+/* ══ POSTER LOAD — background-image via JS: zero CORS on Blogger ══ */
+function loadBg(el, url, showCls) {
+  if (!el || !url) return;
+  var img = new Image();
+  img.onload = function() {
+    el.style.backgroundImage = 'url(' + url + ')';
+    if (showCls) el.classList.add(showCls);
+  };
+  img.src = url;
+}
+
+/* ══ WATCHLIST ══ */
+function gwl(){try{return JSON.parse(localStorage.getItem('cpwl5')||'[]')}catch(e){return[]}}
+function swl(w){try{localStorage.setItem('cpwl5',JSON.stringify(w))}catch(e){}}
+function inwl(id){return gwl().indexOf(id) > -1}
+
+function toggleWL(id) {
+  var item = XDB[id];
+  if (!item) return;
+  var wl = gwl(), i = wl.indexOf(item.id);
+  if (i > -1) { wl.splice(i,1); xtoast('Removed from Watchlist'); }
+  else { wl.push(item.id); xtoast('Added to Watchlist ✓'); }
+  swl(wl);
+  // update all wl buttons for this item
+  document.querySelectorAll('[data-action="save"][data-idx="' + id + '"]').forEach(function(btn){
+    btn.textContent = inwl(item.id) ? '✓ Saved' : '♥ Save';
+    btn.classList.toggle('sv', inwl(item.id));
+  });
+  document.querySelectorAll('.cbwl[data-idx="' + id + '"]').forEach(function(btn){
+    btn.textContent = inwl(item.id) ? '✓' : '♥';
+    btn.classList.toggle('sv', inwl(item.id));
+  });
+  if (document.getElementById('xpg-wl').classList.contains('on')) rwl();
+}
+
+/* ══ CARD HTML — no inline onclick, use data-* attributes ══ */
+function card(item, idx) {
+  var sv = inwl(item.id), bc = bcls(item.b), col = item.c || '#0c0e28,#1a0a0e';
+  var dbxIdx = item.id - 1;
+  return '<div class="xcard" data-idx="' + dbxIdx + '" style="animation-delay:' + (idx * .06) + 's">'
+    + '<div class="xct" data-action="info" data-idx="' + dbxIdx + '">'
+    + '<div class="xct-bg" data-poster="' + IM + item.p + '" style="background:linear-gradient(135deg,' + col + ')"></div>'
+    + '<div class="xct-fb">' + ini(item.t) + '</div>'
+    + '<div class="xveil"><div class="xplay"><svg width="11" height="11" viewBox="0 0 16 16" fill="white"><polygon points="3,1 15,8 3,15"/></svg></div></div>'
+    + '<div class="xbdg ' + bc + '">' + item.b + '</div>'
+    + '<div class="xrk">' + ('0' + (idx+1)).slice(-2) + '</div>'
+    + '</div>'
+    + '<div class="xcb">'
+    + '<div class="xcn">' + item.t + '</div>'
+    + '<div class="xcm"><span class="xcsc">★ ' + item.s + '</span><span>' + item.y + '</span><span>' + item.g + '</span></div>'
+    + '<div class="xcbtns">'
+    + '<button class="cbw" data-action="watch" data-idx="' + dbxIdx + '">&#9654; Watch</button>'
+    + '<button class="cbwl ' + (sv?'sv':'') + '" data-action="save" data-idx="' + dbxIdx + '">' + (sv?'✓':'♥') + '</button>'
+    + '<button class="cbtr" data-action="trail" data-idx="' + dbxIdx + '">&#9655;</button>'
+    + '</div></div></div>';
+}
+
+/* ══ FEATURED CARD ══ */
+function featCard(item) {
+  var col = item.c || '#0c0e28,#1a0a0e';
+  var dbxIdx = item.id - 1;
+  return '<div class="xfc">'
+    + '<div class="xft" data-action="info" data-idx="' + dbxIdx + '">'
+    + '<span class="xft-tx">' + ini(item.t) + '</span>'
+    + '<div class="xft-bg" data-poster="' + IM + item.p + '" style="background:linear-gradient(135deg,' + col + ')"></div>'
+    + '<div class="xft-ov"></div>'
+    + '</div>'
+    + '<div class="xfbd">'
+    + '<div style="display:flex;gap:.38rem;margin-bottom:.38rem;flex-wrap:wrap;align-items:center">'
+    + '<span class="xpill" style="font-size:.64rem">' + item.g + '</span>'
+    + '<span class="xpill" style="font-size:.64rem">' + item.y + '</span>'
+    + '<span style="color:var(--gold);font-size:.7rem;font-weight:700">★ ' + item.s + '</span>'
+    + '</div>'
+    + '<div class="xftt">' + item.t + '</div>'
+    + '<div class="xfd">' + item.d + '</div>'
+    + '<div class="xfbtns">'
+    + '<button class="bw" style="padding:7px 11px;font-size:.72rem" data-action="watch" data-idx="' + dbxIdx + '">&#9654; Watch</button>'
+    + '<button class="bi" style="padding:7px 10px;font-size:.72rem" data-action="info" data-idx="' + dbxIdx + '">ⓘ Info</button>'
+    + '<button class="bwl" style="padding:7px 8px;font-size:.72rem" data-action="save" data-idx="' + dbxIdx + '">♥</button>'
+    + '</div></div></div>';
+}
+
+/* ══ RENDER GRID + LOAD POSTERS ══ */
+function rg(elId, data, feat) {
+  var el = document.getElementById(elId);
+  if (!el) return;
+  el.innerHTML = data.map(function(m, i){ return feat ? featCard(m) : card(m, i) }).join('');
+  // Load all posters — backgroundImage trick, no CORS
+  el.querySelectorAll('[data-poster]').forEach(function(div) {
+    loadBg(div, div.getAttribute('data-poster'), 'show');
+  });
+}
+
+/* ══ PAGES ══ */
+var PGS = ['home','movies','series','action','scifi','drama','wl','search','detail'];
+var GRID_MAP = {movies:'xmovg',series:'xserg',action:'xactg',scifi:'xscig',drama:'xdrag'};
+var DATA_MAP = {
+  movies: function(){return XDB.filter(function(d){return d.tp==='Movie'})},
+  series: function(){return XDB.filter(function(d){return d.tp==='Series'})},
+  action: function(){return XDB.filter(function(d){return d.g==='Action'})},
+  scifi:  function(){return XDB.filter(function(d){return d.g==='Sci-Fi'})},
+  drama:  function(){return XDB.filter(function(d){return d.g==='Drama'})}
+};
+
+function xgo(name) {
+  PGS.forEach(function(p) {
+    var el = document.getElementById('xpg-' + p); if (el) el.classList.toggle('on', p === name);
+    var dt = document.getElementById('xt-' + p);  if (dt) dt.classList.toggle('on', p === name);
+    var mt = document.getElementById('xm-' + p);  if (mt) mt.classList.toggle('on', p === name);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+  if (name === 'home') ihome();
+  else if (GRID_MAP[name]) rg(GRID_MAP[name], DATA_MAP[name](), false);
+  else if (name === 'wl') rwl();
+}
+
+/* ══ HOME ══ */
+function ihome() {
+  var h = XDB[0];
+  // Hero backdrop
+  var bdEl = document.getElementById('hebd');
+  if (bdEl) loadBg(bdEl, IMB + h.bd, null);
+  setTimeout(function(){ if(bdEl) bdEl.style.opacity = '1'; }, 100);
+
+  document.getElementById('hett').innerHTML = h.t + '<br><span class="heghost">Free HD Stream</span>';
+  document.getElementById('heds').textContent = h.d;
+  document.getElementById('hesc').textContent = '★ ' + h.s;
+  document.getElementById('hegen').textContent = h.g;
+  var hw = document.getElementById('hewl');
+  if (hw) { hw.textContent = inwl(h.id) ? '✓ Saved' : '♥ Save'; hw.classList.toggle('sv', inwl(h.id)); }
+
+  rg('xtrend',   XDB.slice(0, 5),  false);
+  rg('xserhome', XDB.filter(function(m){ return m.tp==='Series' }).slice(0,5), false);
+  rg('xnew',     XDB.filter(function(m){ return m.tp==='Movie'  }).slice(0,5), false);
+  rg('xpicks',   [XDB[0], XDB[6], XDB[8]], true);
+}
+
+/* ══ FILTER ══ */
+function applyFilter(btn, f, pg) {
+  var row = btn.closest('.xfrow');
+  if (row) row.querySelectorAll('.xfb').forEach(function(b){ b.classList.remove('on') });
+  btn.classList.add('on');
+  var data = DATA_MAP[pg] ? DATA_MAP[pg]().slice() : XDB.slice();
+  if (f === 'top') data.sort(function(a,b){ return b.s - a.s });
+  else if (f === '2024') data = data.filter(function(d){ return d.y === '2024' });
+  else if (f === '2023') data = data.filter(function(d){ return d.y === '2023' });
+  else if (['Drama','Thriller','Fantasy','Action','Sci-Fi'].indexOf(f) > -1) data = data.filter(function(d){ return d.g === f });
+  rg(GRID_MAP[pg], data, false);
+}
+
+/* ══ DETAIL ══ */
+function showDetail(idx) {
+  var item = XDB[idx];
+  if (!item) return;
+  var col = item.c || '#0c0e28,#1a0a0e', sv = inwl(item.id), bc = bcls(item.b);
+  var cc = ['#0c0e28','#1a0a0e','#0a1628','#0d1b0a','#0a1a1a'];
+  // backdrop
+  var bg = document.getElementById('xdbg');
+  bg.style.background = 'linear-gradient(135deg,' + col + ')';
+  if (item.bd) loadBg(bg, IMB + item.bd, null);
+  // side poster
+  var pp = document.getElementById('xdposter');
+  pp.style.backgroundImage = 'none';
+  if (item.p) loadBg(pp, IM + item.p, null);
+  // content
+  var dIdx = item.id - 1;
+  document.getElementById('xdin').innerHTML =
+    '<div style="display:flex;gap:.38rem;margin-bottom:.8rem;flex-wrap:wrap;align-items:center">'
+    + '<span class="xbdg ' + bc + '" style="position:relative;top:0;left:0">' + item.b + '</span>'
+    + '<span class="xpill">' + item.tp + '</span><span class="xpill">' + item.y + '</span>'
+    + '<span style="color:var(--gold);font-weight:700;font-size:.78rem">★ ' + item.s + '</span>'
+    + '</div>'
+    + '<h1 class="xdtt">' + item.t + '</h1>'
+    + '<p class="xddes">' + item.d + '</p>'
+    + '<div class="xdtags"><span class="xdtag">' + item.g + '</span><span class="xdtag">' + item.y + '</span><span class="xdtag">4K HD</span><span class="xdtag">Free Stream</span></div>'
+    + '<div class="xdact">'
+    + '<button class="bw" data-action="watch" data-idx="' + dIdx + '"><svg width="11" height="11" viewBox="0 0 16 16" fill="white"><polygon points="3,1 15,8 3,15"/></svg> Watch Free</button>'
+    + '<button class="btr" data-action="trail" data-idx="' + dIdx + '">&#9655; Trailer</button>'
+    + '<button class="bwl ' + (sv?'sv':'') + '" data-action="save" data-idx="' + dIdx + '">' + (sv?'✓ Saved':'♥ Save') + '</button>'
+    + '<button class="bsh" data-action="share" data-idx="' + dIdx + '">&#8679; Share</button>'
+    + '</div>';
+  document.getElementById('xdcast').innerHTML = '<div class="xclbl">CAST</div><div class="xcrw">'
+    + (item.ca||[]).map(function(n,i){
+        return '<div><div class="xcav" style="background:linear-gradient(135deg,' + cc[i%cc.length] + ',#10121e)">' + n.slice(0,2).toUpperCase() + '</div><div class="xcnm">' + n + '</div></div>';
+      }).join('') + '</div>';
+  var sim = XDB.filter(function(m){ return m.id!==item.id && (m.g===item.g||m.tp===item.tp) }).slice(0,4);
+  rg('xdmore', sim, false);
+  xgo('detail');
+}
+
+/* ══ WATCHLIST PAGE ══ */
+function rwl() {
+  var items = XDB.filter(function(d){ return inwl(d.id) });
+  rg('xwlg', items, false);
+  document.getElementById('xwle').style.display = items.length ? 'none' : 'block';
+}
+
+/* ══ SEARCH ══ */
+function doSearch(q) {
+  document.getElementById('cpnq').value = q;
+  document.getElementById('xsi').value = q;
+  if (!document.getElementById('xpg-search').classList.contains('on')) xgo('search');
+  var res = q.length > 1 ? XDB.filter(function(m){
+    return m.t.toLowerCase().indexOf(q.toLowerCase()) > -1 || m.g.toLowerCase().indexOf(q.toLowerCase()) > -1;
+  }) : [];
+  document.getElementById('xslbl').textContent = q.length > 1
+    ? res.length + ' result' + (res.length !== 1 ? 's' : '') + ' for "' + q + '"'
+    : 'Type to discover titles...';
+  rg('xsg', res, false);
+}
+
+/* ══ LOCKER ══ */
+function openLocker(title) {
+  document.getElementById('xlkname').textContent = title;
+  document.getElementById('xlkbg').classList.add('on');
+}
+function closeLocker() { document.getElementById('xlkbg').classList.remove('on') }
+
+/* ══ TOAST ══ */
+function xtoast(msg) {
+  var t = document.getElementById('xtoast');
+  t.textContent = msg; t.classList.add('on');
+  clearTimeout(t._t); t._t = setTimeout(function(){ t.classList.remove('on') }, 2400);
+}
+
+/* ══ SHARE ══ */
+function doShare(title) {
+  if (navigator.share) { navigator.share({title:'CinePulse – '+title, url:window.location.href}); }
+  else { try{navigator.clipboard.writeText(window.location.href); xtoast('Link copied!');}catch(e){xtoast('Copy URL from browser bar');} }
+}
+
+/* ══════════════════════════════════════════
+   EVENT DELEGATION — one listener handles ALL clicks
+   No inline onclick needed → works in Blogger
+══════════════════════════════════════════ */
+document.addEventListener('click', function(e) {
+  var el = e.target;
+
+  // walk up to find the element with data-action or data-go
+  while (el && el !== document.body) {
+
+    // Navigation: data-go
+    var pg = el.getAttribute('data-go');
+    if (pg) { xgo(pg); return; }
+
+    // Filter buttons
+    var filter = el.getAttribute('data-filter');
+    var filterPg = el.getAttribute('data-pg');
+    if (filter && filterPg) { applyFilter(el, filter, filterPg); return; }
+
+    // Actions: data-action + data-idx
+    var action = el.getAttribute('data-action');
+    var idx = el.getAttribute('data-idx');
+    if (action !== null && idx !== null) {
+      var i = parseInt(idx, 10);
+      var item = XDB[i];
+      if (!item) return;
+      if (action === 'watch') { openLocker(item.t); return; }
+      if (action === 'info')  { showDetail(i); return; }
+      if (action === 'save')  { toggleWL(i); return; }
+      if (action === 'trail') { window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(item.t + ' official trailer'), '_blank'); return; }
+      if (action === 'share') { doShare(item.t); return; }
+    }
+
+    // Locker close button
+    if (el.id === 'xlkclose') { closeLocker(); return; }
+    // Locker background click
+    if (el.id === 'xlkbg') { closeLocker(); return; }
+    // CPA unlock button
+    if (el.id === 'xcpabtn') { window.open(CPA, '_blank'); return; }
+
+    el = el.parentElement;
+  }
+});
+
+/* ══ SEARCH INPUTS ══ */
+document.getElementById('cpnq').addEventListener('input', function(){ doSearch(this.value) });
+document.getElementById('cpnq').addEventListener('focus', function(){ xgo('search') });
+document.getElementById('xsi').addEventListener('input', function(){ doSearch(this.value) });
+
+/* ══ VISITOR COUNT ══ */
+document.getElementById('cpvis').textContent = '👁 ' + (11800 + Math.floor(Math.random()*500)).toLocaleString() + ' watching now';
+
+/* ══ INIT ══ */
+ihome();
+
+//]]>
+</script>
+</body>
+</html>
